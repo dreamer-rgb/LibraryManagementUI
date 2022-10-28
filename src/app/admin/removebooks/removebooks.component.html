@@ -1,0 +1,29 @@
+<h2 class="center" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"> REMOVE OLD BOOK </h2>
+<div style="width: auto" class="center">
+    <form (ngSubmit)="submit()" name="removebooks" [formGroup]="removeBooks">
+      <mat-dialog-content style="margin-top:20px;">
+        <mat-form-field appearance="fill">
+          <mat-label> Book Title </mat-label>
+          <input
+            matInput
+            placeholder="Enter the book name"
+            formControlName="name"
+            required>
+          <mat-error *ngIf="!removeBooks.controls['name'].valid"> Please give valid details </mat-error>
+        </mat-form-field>
+        <div></div>
+        <mat-form-field appearance="fill">
+          <mat-label> Author  </mat-label>
+          <input
+            matInput
+            placeholder="Author name"
+            formControlName="author">
+        </mat-form-field>
+       
+      </mat-dialog-content>
+      <div></div>
+      <mat-dialog-actions class="center">
+        <button  mat-raised-button type="submit" [disabled]="!removeBooks.valid" style="background-color:#51a94463;margin: left 50px;"> REMOVE BOOK </button>
+      </mat-dialog-actions>
+    </form>
+  </div>

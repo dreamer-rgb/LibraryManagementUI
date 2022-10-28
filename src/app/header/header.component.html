@@ -1,0 +1,34 @@
+<mat-toolbar  style="height: 7vh; background-color: #A52A2A	;">
+    <button *ngIf ="logged" mat-icon-button style="color: white">
+      <mat-icon  (click)="navService.touggleNav()">menu</mat-icon>
+    </button>
+    <a>
+      <img
+        src="../../assets/logolms.png"
+        class="header-image">
+    </a>
+    <span class="headerText">{{ title }}</span>
+    <span class="example-spacer"></span>
+    <a *ngIf="!logged" mat-button routerLink="/notice" style="color: white"> Notices </a>
+    <div *ngIf="logged">
+    <button mat-raised-button [matMenuTriggerFor]="menu" class="headerMenuButton" (click)="rotate()"
+            (menuClosed)="state = 'collapsed'">
+      <span style="margin-left: 5px"> {{username}} </span>
+      <mat-icon [@indicatorRotate]="state">
+        expand_more
+      </mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon> person </mat-icon>
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item >
+        <mat-icon> logout </mat-icon>
+        <span> Logout </span>
+      </button>
+    </mat-menu>
+  </div>
+  </mat-toolbar>
+  
+  
