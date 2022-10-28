@@ -1,0 +1,25 @@
+.is-active {
+    background-color: #e0e0e0;
+  }
+  
+  .sidenav{
+    width: 250px;
+  }
+  
+  .bg {
+    background-image: url("https://cdn.pixabay.com/photo/2020/05/16/16/43/book-5178205_960_720.jpg");
+    height: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 576px) {
+    .sidenav{
+      width: 200px;
+    }
+    .sidenavListItem{
+      font-size: small;
+    }
+  }
